@@ -6,6 +6,11 @@
             "Iferas93\\Mp3quranWrapper\\": "src/"
         }
     },
+    "autoload-dev": {
+        "psr-4": {
+            "Iferas93\\Mp3quranWrapper\\Tests\\": "tests/"
+        }
+    },
     "authors": [
         {
             "name": "Feras Mohamed"
@@ -16,6 +21,6 @@
         "phpunit/phpunit": "10.0.x-dev"
     },
     "require": {
-        "kitetail/zttp": "dev-master"
+        "guzzlehttp/guzzle": "7.5.x-dev"
     }
 }
