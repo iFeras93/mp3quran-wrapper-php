@@ -1,0 +1,16 @@
+{
+    "name": "iferas93/mp3quran-wrapper",
+    "description": "Mp3Quran api wrapper",
+    "autoload": {
+        "psr-4": {
+            "Iferas93\\Mp3quranWrapper\\": "src/"
+        }
+    },
+    "authors": [
+        {
+            "name": "Feras Mohamed"
+        }
+    ],
+    "require": {},
+    "minimum-stability": "dev"
+}
