@@ -8,3 +8,4 @@ coverage
 docs
 phpunit.xml
 vendor
+index.php
