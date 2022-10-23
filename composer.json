@@ -21,6 +21,7 @@
         "phpunit/phpunit": "10.0.x-dev"
     },
     "require": {
+        "php": "^8.0",
         "guzzlehttp/guzzle": "7.5.x-dev"
     }
 }
