@@ -1,6 +1,7 @@
 <?php
 namespace Iferas93\Mp3quranWrapper;
 
+use Exception;
 use GuzzleHttp\Client;
 
 class QuranWrapper
@@ -9,26 +10,24 @@ class QuranWrapper
     private $baseUri="https://mp3quran.net/api";
     private $version ="v3";
 
-    protected function serviceBaseUri()
+    protected function serviceBaseUri(): string
     {
-        return $this->baseUri.'/'.$this->version;
+        return "$this->baseUri/$this->version/";
     }
 
     #TODO:: move this business logic to another class and do refactor
     protected function makeRequest($endpoint,$method = 'GET',$queryParams=[],$bodyParams=[],$headers=[])
     {
-        $client = new Client([
-            // Base URI is used with relative requests
-            'base_uri' => $this->serviceBaseUri(),
-            // You can set any number of default request options.
-            'timeout'  => 30,
-        ]);
+
         try {
-            $request= $client->request($method,$endpoint,[
-                'query'=>$queryParams,
+            $client = new Client([
+                // Base URI is used with relative requests
+                'base_uri' => $this->serviceBaseUri(),
+                // You can set any number of default request options.
+                'timeout'  => 30,
             ]);
-            $response= $request->getBody();
-            return $response;
+            $response= $client->request($method,ltrim($endpoint,'/'));
+            return $response->getBody();//json_decode($response->getBody(),true);
         }catch (Exception $exception){
             return $exception;
         }
@@ -37,6 +36,6 @@ class QuranWrapper
 
     public function getAvailableContentLanguages()
     {
-        return $this->makeRequest('languages');
+        return $this->makeRequest('/languages');
     }
 }
