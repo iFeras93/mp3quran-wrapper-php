@@ -22,7 +22,7 @@ class Languages extends Request
      * @throws BadRequestException
      * @throws NotFoundException
      */
-    public function get(): static
+    public function get(array $options=[]): static
     {
         $response= $this->request('/languages');
         $this->response= $response->getBody()->getContents();

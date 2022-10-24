@@ -14,4 +14,10 @@ class QuranWrapper extends Client
     {
         return new Surah($this);
     }
+
+    public function Riwayat()
+    {
+        return new Riwayat($this);
+    }
+
 }

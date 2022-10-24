@@ -8,8 +8,9 @@ use Iferas93\Mp3quranWrapper\Exception\ConflictException;
 use Iferas93\Mp3quranWrapper\Exception\NotFoundException;
 use Iferas93\Mp3quranWrapper\Exception\RequestException;
 
-class Surah extends Request
+class Reciters extends Request
 {
+
     public function __construct(Client $client)
     {
         parent::__construct($client);
@@ -17,17 +18,17 @@ class Surah extends Request
 
 
     /**
-     * @throws AuthorizationException
      * @throws ConflictException
+     * @throws AuthorizationException
      * @throws RequestException
      * @throws BadRequestException
      * @throws NotFoundException
      */
-    public function get(array $options=[])
+    public function get(array $options=[]): static
     {
         $params= http_build_query($options);
-        $response= $this->request(sprintf('/suwar?%s',$params));
-        $this->response= $response->getBody()->getContents();
+
+        $this->response= $this->request(sprintf("/reciters?%s",$params));
         return $this;
     }
 }

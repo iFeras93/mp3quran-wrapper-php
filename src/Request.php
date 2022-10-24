@@ -72,4 +72,6 @@ abstract class Request
     {
         return json_decode($this->response,true);
     }
+
+    abstract function get(array $options);
 }
