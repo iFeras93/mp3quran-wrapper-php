@@ -16,7 +16,7 @@
             "name": "Feras Mohamed"
         }
     ],
-    "minimum-stability": "dev",
+    "minimum-stability": "stable",
     "require-dev": {
         "phpunit/phpunit": "10.0.x-dev"
     },
