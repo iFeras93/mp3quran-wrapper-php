@@ -48,7 +48,6 @@ abstract class Request
         }
     }
 
-
     /**
      * @param string $endpoint
      * @param string $method
@@ -59,9 +58,14 @@ abstract class Request
         return $this->client->guzzleClient()->requestAsync($method,ltrim($endpoint,'/'));
     }
 
+    public function __toString(): string
+    {
+        return (string)$this->response;
+    }
+
     public function toArray()
     {
-        return $this->response;
+        return (array)$this->response;
     }
 
     public function toJson()

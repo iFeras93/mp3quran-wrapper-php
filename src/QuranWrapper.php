@@ -5,8 +5,13 @@ use Exception;
 
 class QuranWrapper extends Client
 {
-    public function languages(): Languages
+    public function Languages(): Languages
     {
         return new Languages($this);
+    }
+
+    public function Surah()
+    {
+        return new Surah($this);
     }
 }

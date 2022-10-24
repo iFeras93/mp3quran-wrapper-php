@@ -10,7 +10,6 @@ use Iferas93\Mp3quranWrapper\Exception\RequestException;
 
 class Languages extends Request
 {
-    protected $response;
     public function __construct(Client $client)
     {
         parent::__construct($client);
