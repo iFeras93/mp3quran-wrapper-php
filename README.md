@@ -1,6 +1,6 @@
 # Mp3Quran Wrapper
 
-[![Latest Version on Packagist](https://badgen.net/packagist/v/iferas93/mp3quran-wrapper)](https://packagist.org/packages/iferas93/mp3quran-wrapper)
+<a href="https://packagist.org/packages/iferas93/mp3quran-wrapper"><img src="https://img.shields.io/packagist/v/iferas93/mp3quran-wrapper" alt="Latest Stable Version"></a>
 [![PHP Version Requirement](https://badgen.net/packagist/php/iferas93/mp3quran-wrapper)](https://packagist.org/packages/iferas93/mp3quran-wrapper)
 [![Total Downloads](https://badgen.net/packagist/dt/iferas93/mp3quran-wrapper)](https://packagist.org/packages/iferas93/mp3quran-wrapper)
 
