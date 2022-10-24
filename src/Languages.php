@@ -15,13 +15,7 @@ class Languages extends Request
         parent::__construct($client);
     }
 
-    /**
-     * @throws ConflictException
-     * @throws AuthorizationException
-     * @throws RequestException
-     * @throws BadRequestException
-     * @throws NotFoundException
-     */
+
     public function get()
     {
         $response= $this->request('/languages');

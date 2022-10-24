@@ -23,29 +23,10 @@ abstract class Request
     /**
      * @param string $endpoint
      * @param string $method
-     * @return ResponseInterface
-     * @throws AuthorizationException
-     * @throws BadRequestException
-     * @throws ConflictException
-     * @throws NotFoundException
-     * @throws RequestException
      */
-    protected function request(string $endpoint, string $method = "GET"): \Psr\Http\Message\ResponseInterface
+    protected function request(string $endpoint, string $method = "GET")
     {
-        try {
-            return $this->client->guzzleClient()->request($method,ltrim($endpoint,'/'));
-        }catch (ClientException $e) {
-            throw match ($e->getResponse()->getStatusCode()) {
-                400 => new BadRequestException($e),
-                401 => new AuthorizationException($e),
-                404 => new NotFoundException($e),
-                409 => new ConflictException($e),
-                default => new RequestException($e),
-            };
-        } catch (GuzzleException $e) {
-            // TODO handle connect exception
-            throw new RequestException($e);
-        }
+        return $this->client->guzzleClient()->request($method,ltrim($endpoint,'/'));
     }
 
 
