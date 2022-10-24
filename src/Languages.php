@@ -10,15 +10,23 @@ use Iferas93\Mp3quranWrapper\Exception\RequestException;
 
 class Languages extends Request
 {
+    protected $response;
     public function __construct(Client $client)
     {
         parent::__construct($client);
     }
 
-
-    public function get()
+    /**
+     * @throws AuthorizationException
+     * @throws ConflictException
+     * @throws RequestException
+     * @throws BadRequestException
+     * @throws NotFoundException
+     */
+    public function get(): static
     {
         $response= $this->request('/languages');
-        return json_decode($response->getBody()->getContents());
+        $this->response= $response->getBody()->getContents();
+        return $this;
     }
 }
